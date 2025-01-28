@@ -32,6 +32,7 @@ function NavBar() {
                             smooth={true}
                             duration={500}
                             offset={-40} // Reduced offset for smaller gap
+                            
                         >
                             {link}
                         </Link>

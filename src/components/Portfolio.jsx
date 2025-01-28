@@ -5,7 +5,6 @@ import ecom from '../assets/portfolio/ecom.png';
 import movie from '../assets/portfolio/movie.png';
 import api from '../assets/portfolio/api.png';
 
-
 export default function Portfolio() {
     const aboutRef = useRef(null);
     const isInView = useInView(aboutRef, { triggerOnce: true, threshold: 0.2 });
@@ -52,16 +51,18 @@ export default function Portfolio() {
                     {portfolioItems.map(({ id, src, href }) => (
                         <motion.div
                             key={id}
-                            className="shadow-md shadow-slate-700 rounded-lg"
+                            className="shadow-md shadow-slate-700 rounded-lg group"
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 1, delay: 1 * id }}
+                            transition={{ duration: 1, delay: 0.3 * id }}
                         >
-                            <img 
-                                src={src} 
-                                alt={`Project ${id}`} 
-                                className="w-full h-40 object-contain rounded-t-lg" 
-                            />
+                            <div className="overflow-hidden rounded-t-lg">
+                                <img 
+                                    src={src} 
+                                    alt={`Project ${id}`} 
+                                    className="w-full h-40 object-contain transform group-hover:scale-110 transition-transform duration-300"
+                                />
+                            </div>
                             <div className="flex items-center justify-center">
                                 <button className="w-1/2 px-4 py-2 m-2 text-sm rounded hover:scale-105 hover:text-blue-600 duration-200">
                                     Demo
