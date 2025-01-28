@@ -1,33 +1,23 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import {Link} from 'react-scroll';
+import { Link } from 'react-scroll';
+
 function NavBar() {
     const [nav, setNav] = useState(false);
 
     const links = [
-        {
-            id: 1,
-            link: 'home',
-        },
-        {
-            id: 2,
-            link: 'about',
-        },
-        {
-            id: 3,
-            link: 'experience',
-        },
-        {
-            id: 4,
-            link: 'contact',
-        },
+        { id: 1, link: 'home' },
+        { id: 2, link: 'about' },
+        { id: 3, link: 'portfolio' },
+        { id: 4, link: 'experience' },
+        { id: 5, link: 'contact' },
     ];
 
     return (
-        <div className="flex justify-between items-center w-full h-20 px-4 py-4 text-white bg-black fixed">
+        <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed z-50">
             {/* Logo Section */}
             <div className="logo">
-                <h1 className="text-4xl font-signature ml-2">Portfolio</h1>
+                <h1 className="text-5xl font-signature ml-2">Ayush Maharjan</h1>
             </div>
 
             {/* Desktop Links */}
@@ -35,9 +25,16 @@ function NavBar() {
                 {links.map(({ id, link }) => (
                     <li
                         key={id}
-                        className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-150"
+                        className="px-4 cursor-pointer capitalize font-medium text-gray-400 hover:text-white hover:scale-105 duration-150"
                     >
-                        <Link to={link} smooth duration={500}>{link}</Link>
+                        <Link
+                            to={link}
+                            smooth={true}
+                            duration={500}
+                            offset={-40} // Reduced offset for smaller gap
+                        >
+                            {link}
+                        </Link>
                     </li>
                 ))}
             </ul>
@@ -52,16 +49,21 @@ function NavBar() {
 
             {/* Mobile Links */}
             {nav && (
-                <ul
-                    className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500"
-                >
+                <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-400">
                     {links.map(({ id, link }) => (
                         <li
                             key={id}
-                            className="px-4 cursor-pointer capitalize py-6 hover:scale-105 duration-150"
+                            className="px-4 cursor-pointer capitalize py-6 text-2xl hover:text-white hover:scale-105 duration-150"
                             onClick={() => setNav(false)} // Close menu on click
                         >
-                        <Link onClick={()=>setNav(!nav)} to={link} smooth duration={500}>{link}</Link>
+                            <Link
+                                to={link}
+                                smooth={true}
+                                duration={500}
+                                offset={-60} // Reduced offset for smaller gap
+                            >
+                                {link}
+                            </Link>
                         </li>
                     ))}
                 </ul>
