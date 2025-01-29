@@ -14,8 +14,8 @@ export default function Contact() {
               type="text"
               id="name"
               name="name"
-              placeholder="Enter your Name"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+              placeholder="Enter your name"
+              className="w-full px-4 py-2 bg-gray-700 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
             />
           </div>
           <div>
@@ -27,7 +27,7 @@ export default function Contact() {
               id="email"
               name="email"
               placeholder="Enter your email"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+              className="w-full px-4 py-2 bg-gray-700 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
             />
           </div>
           <div>
@@ -39,7 +39,7 @@ export default function Contact() {
               name="message"
               rows="4"
               placeholder="Leave your message here"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+              className="w-full px-4 py-2  bg-gray-700 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
             ></textarea>
           </div>
           <div>

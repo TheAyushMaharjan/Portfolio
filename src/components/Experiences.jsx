@@ -7,6 +7,8 @@ import tailwind from '../assets/tailwind.svg';
 import laravel from '../assets/laravel.svg';
 import mysql from '../assets/mysql.svg';
 import firebase from '../assets/firebase.svg';
+import github from '../assets/github.svg';
+
 
 export default function Experiences() {
     const experiences = [
@@ -57,6 +59,12 @@ export default function Experiences() {
             src: firebase,
             title: 'Firebase',
             style: 'shadow-yellow-400',
+        },
+        {
+            id: 8,
+            src: github,
+            title: 'github',
+            style: 'shadow-gray-50',
         },
     ];
 
