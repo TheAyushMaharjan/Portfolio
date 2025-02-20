@@ -1,10 +1,14 @@
-import React from 'react';
-import { motion } from 'framer-motion'; // Importing Framer Motion
+import React, { useRef }  from 'react';
+import { motion, useInView } from 'framer-motion'; // Importing Framer Motion
 import heroimage from "../assets/heroimage.jpg";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from 'react-scroll';
 
 export default function Home() {
+    const aboutRef = useRef(null);
+
+    const isInView = useInView(aboutRef, { triggerOnce: true, threshold: 0.4 });
+  
   return (
     <div
       name="home"
@@ -13,9 +17,10 @@ export default function Home() {
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row md:gap-5 ">
         {/* Left Section */}
         <motion.div
+          ref={aboutRef}
           className="flex flex-col justify-center h-full text-center md:text-left md:w-1/2"
           initial={{ x: -100, opacity: 0 }} // Slide in from left
-          animate={{ x: 0, opacity: 1 }} // Set to visible
+          animate={isInView ? { x: 0, opacity: 1 } : {}}
           transition={{ duration: 1.2, ease: "easeOut" }} // Smooth transition
         >
           <h2 className="text-4xl sm:text-6xl font-bold text-white mb-4">
@@ -54,7 +59,7 @@ export default function Home() {
         <motion.div
           className="mt-6 md:mt-0 md:w-1/2 text-center"
           initial={{ scale: 0.8, opacity: 0 }} // Scale up with fade-in
-          animate={{ scale: 1, opacity: 1 }}
+          animate={isInView ? { scale: 1, opacity: 1 } : {}}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <img
