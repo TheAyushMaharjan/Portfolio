@@ -9,10 +9,10 @@ import content from '../assets/portfolio/content.png';
 export default function Portfolio() {
     const aboutRef = useRef(null);
     const isInView = useInView(aboutRef, { triggerOnce: true, threshold: 0.2 });
-    const [previewImage, setPreviewImage] = useState(null); // Track the image being previewed
+    const [previewImage, setPreviewImage] = useState(null); 
 
     const portfolioItems = [
-        { id: 1, src: api,
+        { id: 1,
             src: content,
             href: 'https://github.com/TheAyushMaharjan/Content-Management-System.git',
          },
