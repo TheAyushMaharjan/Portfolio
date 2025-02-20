@@ -21,7 +21,7 @@ export default function About() {
 
         <motion.div
           initial={{ y: 100, opacity: 0 }} // Starts from below
-          animate={{ y: 0, opacity: 1 }} // Moves up to normal position
+          animate={isInView ? { y: 0, opacity: 1 } :{}} // Moves up to normal position
           transition={{ duration: 2, ease: "easeOut" }}
         >
           <p className="text-xl mt-4 text-gray-200">

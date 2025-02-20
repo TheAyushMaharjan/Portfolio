@@ -4,6 +4,7 @@ import expensetracker from '../assets/portfolio/expensetracker.png';
 import ecom from '../assets/portfolio/ecom.png';
 import movie from '../assets/portfolio/movie.png';
 import api from '../assets/portfolio/api.png';
+import content from '../assets/portfolio/content.png';
 
 export default function Portfolio() {
     const aboutRef = useRef(null);
@@ -11,18 +12,22 @@ export default function Portfolio() {
     const [previewImage, setPreviewImage] = useState(null); // Track the image being previewed
 
     const portfolioItems = [
+        { id: 1, src: api,
+            src: content,
+            href: 'https://github.com/TheAyushMaharjan/Content-Management-System.git',
+         },
         { 
-            id: 1, 
+            id: 2, 
             src: expensetracker,
             href: 'https://github.com/TheAyushMaharjan/Ecommerce-Tech-Website.git',
         },
-        { id: 2, src: ecom,
+        { id: 3, src: ecom,
             href: 'https://github.com/TheAyushMaharjan/expenses_tracker.git',
          },
-        { id: 3, src: movie,
+        { id: 4, src: movie,
             href: 'https://github.com/TheAyushMaharjan/movieapp.git',
          },
-         { id: 4, src: api,
+         { id: 5, src: api,
             href: 'https://github.com/TheAyushMaharjan/Api-CURD-Laravel.git',
          },
     ];
